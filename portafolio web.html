@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Portafolio</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #2c3e50; /* Fondo negro */
+            color: #fff; /* Texto blanco */
+            line-height: 1.6;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db; /* Azul brillante */
+            padding: 20px;
+            border-bottom: 3px solid #2c3e50; /* Azul más oscuro */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            color: #fff; /* Texto blanco */
+        }
+        #fotoini {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #ffffff; /* Borde blanco */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            object-fit: cover; /* Ajuste de la imagen */
+            transition: transform 0.3s ease-in-out; /* Transición suave */
+        }
+
+        #fotoini:hover {
+            transform: scale(1.2); /* Aumenta el tamaño al 120% al pasar el puntero */
+        }
+
+
+        nav {
+            background-color: #3e9c62; /* Verde */
+            padding: 10px;
+            border-bottom: 3px solid #d35400; /* Naranja más oscuro */
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+            font-size: 1.2em;
+        }
+
+        a {
+            text-decoration: none;
+            color: #fff; /* Texto blanco */
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #3498db; /* Azul brillante al pasar el mouse */
+        }
+
+        section {
+            margin-top: 40px;
+            padding: 30px;
+            background-color: #2c3e50; /* Fondo azul oscuro */
+            border: 1px solid #ddd;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            transition: background-color 0.3s;
+        }
+
+        .proyecto {
+            margin-bottom: 30px;
+        }
+
+        .proyecto h3 {
+            color: #ffffff; /* Texto blanco */
+        }
+
+        .proyecto img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+            transition: transform 0.3s;
+        }
+
+        footer {
+            background-color: #3498db; /* Azul brillante */
+            padding: 20px;
+            border-top: 3px solid #2980b9; /* Azul más oscuro */
+            text-align: center;
+            color: #fff; /* Texto blanco */
+        }
+        /* Estilos para el modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            padding-top: 50px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0,0,0);
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-width: 80%;
+            max-height: 80%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,.close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1><b>Mi Portafolio Carlos Alberto Briones Pino</b></h1>
+        <img id="fotoini" src='tuki.jpg' alt="Foto de perfil" onclick="abrirModal()">
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#habilidades">Habilidades</a></li>
+            <li><a href="#aspiraciones">Aspiraciones</a></li>
+            <li><a href="#proyectos">Proyectos</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section id="inicio">
+        <h2>Bienvenido a mi portafolio</h2>
+        <p>¡Hola! Soy Carlos, también conocido como Pino. Soy estudiante de Ingeniería en Software. Este es mi blog o espacio donde encontrarás información sobre mí.</p>
+    </section>
+
+    <section id="historia">
+        <h2>Historia</h2>
+        <p>Mi nombre es Carlos Alberto Briones Pino. Tengo 20 años y soy estudiante de Ingeniería en Software. Vivo en Honorato Vásquez, Santa Ana. Soy una persona alegre y apasionada por las computadoras, la electrónica y los automóviles. Actualmente trabajo y estudio; mi trabajo es de controlador de bus en la Cooperativa Intercantonal de Transporte Ayacucho (C.I.T.A). En la actualidad, vivo con mis abuelitos, a quienes admiro mucho, y desde allí continúo avanzando, pagándome mis estudios y siempre mejorando para ser el mejor. Elegí mi carrera por mi amor hacia la tecnología y el desarrollo de software.</p>
+    </section>
+
+    <section id="habilidades">
+        <h2>Habilidades</h2>
+        <p>En mi camino como estudiante de Ingeniería en Software, he adquirido diversas habilidades, entre las cuales destacan:</p>
+        <ul>
+            <li>Desarrollo de software</li>
+            <li>Programación en varios lenguajes (Java, Python, gdscript.)</li>
+            <li>Diseño y desarrollo web (HTML, CSS, JavaScript) algo que medio domino</li>
+            <li>Ciberseguridad(Phishing,inyeccion sql,Fuerza bruta, hombre en medio,backdoor)</li>
+            <li>Algo de Electronica(Soldaduras,Conocimientos de resistencias y circuitos)</li>
+            <li>Conocimientos de Motores automovilísticos</li>
+            <li>Manejo de Presas de Aguas</li>
+        </ul>
+    </section>
+
+    <section id="aspiraciones">
+        <h2>Aspiraciones</h2>
+        <p>Como aspirante a ingeniero de software, mi meta es:</p>
+        <ul>
+            <li>Contribuir al desarrollo de soluciones tecnológicas innovadoras.</li>
+            <li>Participar en proyectos que tengan un impacto positivo en la sociedad.</li>
+            <li>Continuar aprendiendo y mejorando mis habilidades.</li>
+            <li>Crear mi propia compañía</li>
+            <li>Impartir mis conocimientos al mundo con mis ideas</li>
+            <li>Ser el mejor</li>
+        </ul>
+    </section>
+
+    <section id="proyectos">
+        <h2>Proyectos</h2>
+        <div class="proyecto">
+            <h3><b>The Lear With Cubert</b></h3>
+            <p>Un proyecto el cual estaba o está enfocado a aprendizaje de programación mediante un juego el cual cuenta con una historia y una dificultad de niveles, este mismo fue desarrollado por KurobaStudios el cual fue fundada por, Luis Montenegro, Jostyn Alcivar, Cesar Intriago, William Alcivar y mi persona Carlos Pino este proyecto fue hecho hace 2 años, lo cual fue creado en Godot con el lenguaje gdscript, nosotros somos fundadores y los creadores del mismo proyecto, este proyecto fue presentado en una convención la cual en esa actualización que recibió hubo la participación Marcos Benitez, Byron Canales, Esteban Cetillen los cuales se unieron después para mejorar y darle actualización, este proyecto por esta finalizado pero con ganas de seguir mejorando y creciendo.</p>
+            <div style="text-align: center;">
+                <video width="100%" height="auto" controls style="max-width: 50%;">
+                    <source src="cubert.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </section>
+    <section id="proyectos">
+        <div class="proyecto">
+            <h3><b>Hackerguy</b></h3>
+            <p>Este fue un proyecto creado por 3 personas las cuales fueron Cesar Intriago, Luis Montenegro y mi Persona Carlos Pino, este mismo se hizo también en gdscript con el motor Godot el cual fue presentado el semestre pasado, este mismo es un juego de sigilo donde se trata de sumergir al público en un juego donde debes ser sigiloso para descubrir lo que oculta los altos mandos de una empresa y ahí donde utilizamos nuestros conocimientos como hacker, de ahí viene el nombre de Hackerguy, este proyecto a la fecha de hoy ya está finalizado y este mismo, también está en mejorar muchos ámbitos, esperemos algún día se pueda retomar y hacerlos crecer y que vean la luz más allá de lo que conocen.</p>
+            <div style="text-align: center;">
+                <video width="100%" height="auto" controls style="max-width: 50%;">
+                    <source src="hasckerguy.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+        </div>
+    </section>
+    <section id="proyectos">
+        <div class="proyecto">
+            <h3><b>Implementación y configuración de Dispositivos Syscom Instruments</b></h3>
+            <p>En la implementación de los aparatos de Syscom Instruments para la medición de sismos en las presas de aguas, este proyecto yo hice partícipe en la configuración de los dispositivos para la obtención de datos de los sismos que ocurren en las diferentes presas del Ecuador.</p>
+            <div style="text-align: center;">
+                <img src="IMG_20230403_143806.jpg" alt="Proyecto 3" style="max-width: 50%;" >
+            </div>
+        </div>
+    </section>
+
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>¡Contáctame! Puedes encontrarme en cbriones1247@utm.edu.ec.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Carlos (Pino). Todos los derechos reservados.</p>
+    </footer>
+    <div id="myModal" class="modal">
+        <span class="close" onclick="cerrarModal()">&times;</span>
+        <img class="modal-content" id="imagenModal">
+      </div>
+      
+    <script>
+        // Efecto de transición en los enlaces del menú
+        const links = document.querySelectorAll('nav a');
+        links.forEach(link => {
+            link.addEventListener('mouseenter', () => {
+                link.style.color = '#e67e22'; /* Naranja */
+            });
+            link.addEventListener('mouseleave', () => {
+                link.style.color = '#fff'; /* Texto blanco */
+            });
+        });
+
+        // Cambio de fondo en las secciones
+        const sections = document.querySelectorAll('section');
+        sections.forEach(section => {
+            section.addEventListener('mouseenter', () => {
+                section.style.backgroundColor = '#3498db'; /* Azul brillante */
+            });
+            section.addEventListener('mouseleave', () => {
+                section.style.backgroundColor = '#2c3e50'; /* Fondo azul oscuro */
+            });
+        });
+
+        // Efecto de crecimiento al pasar el mouse sobre las imágenes
+        const proyectoImgs = document.querySelectorAll('.proyecto img');
+        proyectoImgs.forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transform = 'scale(1.1)';
+            });
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = 'scale(1)';
+            });
+        });
+        function abrirImagen() {
+        // Reemplazar 'tuki.jpg' con la ruta de la imagen que deseas abrir
+        window.open('tuki.jpg', '_blank');
+        }
+        function abrirModal() {
+            // Obténer la referencia al modal y a la imagen modal
+            var modal = document.getElementById("myModal");
+            var imgModal = document.getElementById("imagenModal");
+
+            // Asignar la imagen original al modal
+            imgModal.src = 'tuki.jpg';
+
+            // Mostrar el modal
+            modal.style.display = "block";
+        }
+
+        function cerrarModal() {
+            // Obténer la referencia al modal y ciérralo
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+    </script>
+</body>
+</html>
+
